@@ -1,0 +1,35 @@
+.login input {
+    width: 300px;
+    background-color: #d7d7d7;    
+    padding: 20px 30px;
+    text-align: left;
+    border: none;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
+.login button {
+    width: 360px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    padding: 20px 30px;
+    border-radius: 20px;
+    border: none;
+    background-color: #d7d7d7;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.email, .password {
+    margin-top: 15px;
+}
+
+.error {
+    font-weight: bold;
+    color: red;
+}
+
+.login h1 {   
+    font-size: 32px;
+    font-weight: bold;
+}

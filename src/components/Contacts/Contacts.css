@@ -1,0 +1,99 @@
+.contacts {
+    padding: 15px;
+}
+
+.tableHeader {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.singleContact {
+    height: 57px;
+    position: relative;
+}
+
+.singleContact, .tableHeader, .contactWrapper form {
+    border: solid 1px grey;
+    display: flex;
+    justify-content: stretch;
+}
+
+.singleContact span {
+    display: flex;
+    align-items: center;
+}
+
+.singleContact span, .tableHeader span, .contactWrapper form span {
+    text-align: left;
+    border: solid 1px grey;
+    width: 200px;
+    flex-grow: 1;
+    padding: 10px;
+    padding: 10px;
+}
+
+.singleContact span:nth-child(3), .contactWrapper form span:nth-child(3), .tableHeader span:nth-child(3) {
+    width: 300px;
+}
+
+.contactWrapper {
+    height: 100px;
+    position: relative;
+}
+
+.contactWrapper button {
+    border: none;
+    border-radius: 20px;
+    width: 80px;
+    height: 30px;
+    margin: 5px;
+    position: absolute;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.contactWrapper .deleteButton {
+    right: 0px;
+}
+
+.contactWrapper .editButton, .contactWrapper .cancelButton {
+    right: 100px;
+}
+
+.contactWrapper form input {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    text-transform: uppercase;
+    width: 180px;
+    border: none;
+    background-color: #d7d7d7;
+    border-radius: 20px;
+}
+
+
+.contactWrapper form span:nth-child(3) input {
+    width: 280px;
+}
+
+.contactWrapper form {
+    position: relative;
+}
+
+.contactWrapper form .submitButton {
+    position: absolute;
+    right: 200px;
+    top: 58px
+}
+
+.newContactButton {
+    width: 360px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px 30px;
+    border-radius: 20px;
+    border: none;
+    background-color: #d7d7d7;
+    cursor: pointer;
+    text-transform: uppercase;
+}

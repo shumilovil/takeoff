@@ -1,0 +1,50 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "shumilovil@gmail.com",
+      "password": "123"
+    }
+  ],
+  "contacts": [
+    {
+      "firstName": "Shum1",
+      "lastName": "первый айди",
+      "email": "2222shumilovil@gmail.com",
+      "phone": "111",
+      "id": 1
+    },
+    {
+      "firstName": "Shum2",
+      "lastName": "Второй айди",
+      "email": "2222shumilovil@gmail.com",
+      "phone": "222222",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "firstName": "Shum3",
+      "lastName": "Shum3Shum3",
+      "email": "333shumilovil@gmail.com",
+      "phone": "3333"
+    },
+    {
+      "firstName": {
+        "firstName": "new",
+        "lastName": "new",
+        "email": "new",
+        "phone": "new"
+      },
+      "id": 4
+    },
+    {
+      "firstName": {
+        "firstName": "new",
+        "lastName": "new",
+        "email": "new",
+        "phone": "new"
+      },
+      "id": 5
+    }
+  ]
+}
