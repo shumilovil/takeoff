@@ -2,7 +2,7 @@ import React from 'react';
 import './Contacts.css';
 import { useState } from 'react';
 import { useFormik } from 'formik';
-import { updateContact } from '../../api';
+import { updateContact, deleteContact } from '../../api';
 
 export const Contact = (props) => {
 
@@ -17,12 +17,9 @@ export const Contact = (props) => {
         },
         onSubmit: values => {
             alert(JSON.stringify(values, null, 2));
-            updateContact(props.contact.id, values.firstName, values.lastName, values.email, values.phone)
-                .then(() => { setEditMode(false) })
+            updateContact(props.id, values.firstName, values.lastName, values.email, values.phone)
                 .then(() => { props.getContactsAfterUpdate() })
-
-
-
+                .then(() => { setEditMode(false) })
         }
     });
 
@@ -31,9 +28,14 @@ export const Contact = (props) => {
         setEditMode(false);
     }
 
+    const handleDeleteContact = () => {
+        deleteContact(props.id)
+            .then(() => { props.getContactsAfterUpdate() })
+    }
+
     return (
         <div className='contactWrapper'>
-            
+
 
             {
                 editMode ?
@@ -92,7 +94,7 @@ export const Contact = (props) => {
                     : <button onClick={handleCancelEdit} className='cancelButton'>cancel</button>
             }
 
-            <button className='deleteButton'>delete</button>
+            <button className='deleteButton' onClick={handleDeleteContact}>delete</button>
 
         </div>
     )

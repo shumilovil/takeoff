@@ -9,9 +9,13 @@ export const getAllContacts = () => {
 }
 
 export const updateContact = (id, firstName, lastName, email, phone) => {
-    return axios.put(`http://localhost:4001/contacts/${id}`, { firstName, lastName, email, phone });
+    return axios.put(`http://localhost:4001/contacts/${id}`, { firstName:{firstName, lastName, email, phone} });
 }
 
 export const addContact = (firstName, lastName, email, phone) => {
     return axios.post(`http://localhost:4001/contacts`, {firstName, lastName, email, phone });
+}
+
+export const deleteContact = (id) => {
+    return axios.delete(`http://localhost:4001/contacts/${id}`);
 }
