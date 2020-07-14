@@ -4,20 +4,23 @@ import { Contact } from './Contact';
 import { addContact } from '../../api';
 import { useState } from 'react';
 import { useFormik } from 'formik';
+import { useEffect } from 'react';
 
 export const Contacts = (props) => {
 
     const [isAddingMode, setAddingMode] = useState(false);
+    const [searchOption, setSearchOption] = useState('firstName');
+
 
     const formik = useFormik({
         initialValues: {
             firstName: '',
             lastName: '',
             email: '',
-            phone: ''
+            phone: '',
+            search: ''
         },
         onSubmit: values => {
-            alert(JSON.stringify(values, null, 2));
             addContact({
                 firstName: values.firstName,
                 lastName: values.lastName,
@@ -30,11 +33,37 @@ export const Contacts = (props) => {
     });
 
 
+    const handleCancelEdit = () => {        
+        setAddingMode(false);
+    }
+
+    useEffect(() => {
+        formik.handleReset();
+    }, [isAddingMode])
 
     return (
         <div>
             <h1>Contacts</h1>
-
+            <div className='searchInput'>
+                <input
+                    id="search"
+                    name="search"
+                    type="text"
+                    placeholder='search'
+                    onChange={formik.handleChange}
+                    value={formik.values.search}
+                />
+            </div>
+            <div className='searchOptions'>
+                <span className={searchOption === 'firstName' ? 'searchOption chosen' : "searchOption"}
+                    onClick={() => { setSearchOption('firstName') }}>firstName</span>
+                <span className={searchOption === 'lastName' ? 'searchOption chosen' : "searchOption"}
+                    onClick={() => { setSearchOption('lastName') }}>lastName</span>
+                <span className={searchOption === 'email' ? 'searchOption chosen' : "searchOption"}
+                    onClick={() => { setSearchOption('email') }}>email</span>
+                <span className={searchOption === 'phone' ? 'searchOption chosen' : "searchOption"}
+                    onClick={() => { setSearchOption('phone') }}>phone</span>
+            </div>
             <div className='contacts'>
                 {
                     isAddingMode ?
@@ -80,9 +109,9 @@ export const Contacts = (props) => {
                                         value={formik.values.phone}
                                     />
                                 </span>
-                                <button type="submit" className='submitButton'>Submit</button>
+                                <button type="submit" className='submitButton'>Add</button>
                             </form>
-                            <button className='cancelButton' onClick={() => { setAddingMode(false) }}>cancel</button>
+                            <button className='cancelButton' onClick={handleCancelEdit}>cancel</button>
                         </div>
                         : null
                 }
@@ -100,9 +129,12 @@ export const Contacts = (props) => {
 
                 {
                     props.contacts.map(contact => {
-                        return (
-                            <Contact key={contact.id} id={contact.id} contact={contact.firstName} getContactsAfterUpdate={props.getContactsAfterUpdate} />
-                        )
+                        if (contact.firstName[searchOption].toLowerCase().includes(formik.values.search.toLowerCase())) {
+                            return (
+                                <Contact key={contact.id} id={contact.id} contact={contact.firstName} getContactsAfterUpdate={props.getContactsAfterUpdate} />
+                            )
+                        }
+
                     })
                 }
             </div>

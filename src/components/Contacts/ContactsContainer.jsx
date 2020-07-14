@@ -9,10 +9,8 @@ export const ContactsContainer = (props) => {
     const [contacts, setContacts] = useState([]);
 
     useEffect(() => {
-        console.log('Use1');
         getAllContacts()
             .then(response => {
-                console.log(response.data)
                 setContacts(response.data)
             })
     }, []);

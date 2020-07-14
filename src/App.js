@@ -6,7 +6,7 @@ import { authorise } from './api';
 
 function App() {
 
-    const [isAuthorised, setAuthorisation] = useState(true);
+    const [isAuthorised, setAuthorisation] = useState(false);
 
     const handleAuthorisation = (formValues) => {
         authorise().then(response => {

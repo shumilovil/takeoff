@@ -9,26 +9,8 @@
   "contacts": [
     {
       "firstName": {
-        "firstName": "Ivan2",
-        "lastName": "Petrov77",
-        "email": "www@ddd2",
-        "phone": "222"
-      },
-      "id": 4
-    },
-    {
-      "firstName": {
-        "firstName": "Petr",
-        "lastName": "IVANOV",
-        "email": "WWW@fff",
-        "phone": "888"
-      },
-      "id": 5
-    },
-    {
-      "firstName": {
-        "firstName": "Il",
-        "lastName": "Shum",
+        "firstName": "Kris",
+        "lastName": "Shumilov11",
         "email": "WWW@rrr",
         "phone": "99"
       },
@@ -51,6 +33,33 @@
         "phone": "5555"
       },
       "id": 8
+    },
+    {
+      "firstName": {
+        "firstName": "Shum1",
+        "lastName": "Shum",
+        "email": "shumilovil@gmail.com",
+        "phone": "121212"
+      },
+      "id": 9
+    },
+    {
+      "firstName": {
+        "firstName": "Alex",
+        "lastName": "Mol",
+        "email": "Alex@gmail.com",
+        "phone": "+7926369852"
+      },
+      "id": 10
+    },
+    {
+      "firstName": {
+        "firstName": "Derek",
+        "lastName": "whibley",
+        "email": "sum41@sum41",
+        "phone": "+3025964636"
+      },
+      "id": 11
     }
   ]
 }

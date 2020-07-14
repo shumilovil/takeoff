@@ -16,7 +16,6 @@ export const Contact = (props) => {
             phone: props.contact.phone
         },
         onSubmit: values => {
-            alert(JSON.stringify(values, null, 2));
             updateContact(props.id, values.firstName, values.lastName, values.email, values.phone)
                 .then(() => { props.getContactsAfterUpdate() })
                 .then(() => { setEditMode(false) })
@@ -76,7 +75,7 @@ export const Contact = (props) => {
                                 value={formik.values.phone}
                             />
                         </span>
-                        <button type="submit" className='submitButton'>Submit</button>
+                        <button type="submit" className='submitButton'>Save</button>
                     </form>
 
                     :
